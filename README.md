@@ -1,5 +1,9 @@
 # sheikh-ahmad-mobiles-pos
 
+Sheikh Ahmed Mobile POS — an Electron + React point-of-sale desktop app for a retail & wholesale mobile phone shop.
+
+> **Setting this up?** See the complete **[Developer & Client Setup Guide](./DEVELOPER-SETUP.md)** for prerequisites, development, building the Windows installer, and configuring the client laptop (printer, business details, Google Drive backup).
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
