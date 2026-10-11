@@ -1,0 +1,52 @@
+appId: com.sheikhahmed.mobilepos
+productName: Sheikh Ahmed Mobile POS
+copyright: Copyright © Sheikh Ahmed Mobile
+
+directories:
+  buildResources: build
+  output: release
+
+files:
+  - dist/**
+  - dist-electron/**
+  - package.json
+  - "!**/*.map"
+  - "!**/*.ts"
+  - "!tests/**"
+  - "!src/**"
+  - "!playwright-report/**"
+  - "!test-results/**"
+  - "!IMPROVEMENT-PLAN.md"
+  - "!README.md"
+  - "!**/*-wal"
+  - "!**/*-shm"
+
+asarUnpack:
+  - "**/*.node"
+
+extraResources:
+  - from: public/logo.png
+    to: logo.png
+  - from: resources/app/sheikh-ahmed-mobile.db
+    to: db/sheikh-ahmed-mobile.db
+    filter:
+      - "sheikh-ahmed-mobile.db"
+      - "!**/*-wal"
+      - "!**/*-shm"
+
+# better-sqlite3 ships prebuilt binaries; skip native rebuild to avoid needing a toolchain
+npmRebuild: false
+
+win:
+  target:
+    - nsis
+  artifactName: ${productName}-Setup-${version}.${ext}
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: Sheikh Ahmed Mobile POS
+  uninstallDisplayName: Sheikh Ahmed Mobile POS
+  deleteAppDataOnUninstall: false
